@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block bodyblock %}
+
+        <div class="container homepage" style="text-align: center;">
+
+                <img src="{{url_for('static',filename='images/logo_name.png')}}" alt="">
+                    <br>
+                    <br>
+                <h1> Welcome to my AI Face Detection App </h1>
+
+
+                <a href="{{ url_for('index') }}"> <button style="margin: 10px;" type="button" class="btn btn-primary">Home</button> </a>
+                
+                
+                
+                
+                
+                <a href="{{ url_for('index') }}"></a>
+                
+
+
+        
+        </div>
+
+    <div class="container">
+    <h3>Classify Your Photos Here</h3>
+    </div>
+
+    <div class="container">
+        <br>
+        <form action="#" method="post" enctype="multipart/form-data">
+            <label for="upload"> <h4>Upload to predict</h4></label>
+            <input class="btn btn-primary" type="file" id="upload" name="image" required="true">
+            <input class="btn btn-primary" type="submit" value="upload & predict">
+        </form>
+
+    </div>
+
+    {% if fileupload  %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6" id="predict">
+                <img src="{{ url_for('static',filename='uploads/')}}{{ img_name }}" alt="" width="{{ w }}" height="300">
+            </div>
+            <div class="col-md-6" id="predict">
+                <img src="{{ url_for('static',filename='predict/')}}{{ img_name }}" alt="" width="{{ w }}" height="300">
+            </div>
+        </div>
+    </div>
+
+    <style>
+        #predict{
+            border: solid;
+            color:#002f4d;
+            text-align: center;
+        }
+    </style>
+
+
+    {% endif %}
+
+{% endblock %}

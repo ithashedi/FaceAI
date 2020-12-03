@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{%block bodyblock %}
+
+        <div class="container homepage" style="text-align: center;">
+
+                <img src="{{url_for('static',filename='images/logo_name.png')}}" alt="">
+                    <br>
+                    <br>
+                <h1> Welcome to my AI Face Detection App </h1>
+
+
+                <a href="{{ url_for('gender') }}">  <button style="margin: 10px;" type="button" class="btn btn-primary">Start Detecting Faces</button> </a>
+
+
+        
+        </div>
+
+{% endblock  %}
